@@ -1,5 +1,4 @@
 ---
-layout: page
 title: 开源项目
 ---
 

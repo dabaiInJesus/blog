@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "vitepress dev src",
+    "predev": "node scripts/fetch-repos.mjs",
     "build": "vitepress build src",
+    "prebuild": "node scripts/fetch-repos.mjs",
     "preview": "vitepress preview src",
     "deploy": "bash deploy.sh"
   },

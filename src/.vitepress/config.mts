@@ -1,18 +1,16 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  title: 'blog',
+  title: 'dabaiInJesus',
   description: '分享技术、工具与折腾',
-  srcDir: 'src',
   lang: 'zh-CN',
   themeConfig: {
-    logo: '/avatar.png',
     nav: [
       { text: '首页', link: '/' },
       { text: '工具', link: '/tools/' },
       { text: '文章', link: '/posts/' },
-      { text: '开源项目', link: '/projects/' },
-      { text: '关于', link: '/about/' }
+      { text: '开源项目', link: 'https://github.com/dabaiInJesus' },
+      { text: '关于', link: '/about' }
     ],
     socialLinks: [
       { icon: 'github', link: 'https://github.com/dabaiInJesus' }

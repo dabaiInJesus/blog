@@ -1,5 +1,10 @@
 node_modules
 .vitepress/dist
 .vitepress/cache
+src/.vitepress/dist
+src/.vitepress/cache
+src/public/
 *.local
 .DS_Store
+.idea/
+.claude/
