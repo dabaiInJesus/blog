@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
+  base: '/blog/',
   title: 'dabaiInJesus',
   description: '分享技术、工具与折腾',
   lang: 'zh-CN',
