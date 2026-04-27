@@ -11,6 +11,7 @@ export default defineConfig({
       { text: '首页', link: '/' },
       { text: '工具', link: '/tools/' },
       { text: '文章', link: '/posts/' },
+      { text: '开源项目', link: '/projects/' },
       { text: '关于', link: '/about/' }
     ],
     socialLinks: [

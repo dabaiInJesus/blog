@@ -23,4 +23,5 @@ features:
   - icon: 🚀
     title: 开源项目
     details: 代码即作品，展示折腾的痕迹
+    link: /projects/
 ---
