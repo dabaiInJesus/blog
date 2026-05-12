@@ -49,6 +49,15 @@
       "topics": []
     },
     {
+      "name": "blog",
+      "description": null,
+      "html_url": "https://github.com/dabaiInJesus/blog",
+      "language": "Vue",
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "topics": []
+    },
+    {
       "name": "bible-model-training",
       "description": "福音导向的圣经安慰模型训练项目 - 使用Qwen2-1.5B模型帮助人们认识神的爱",
       "html_url": "https://github.com/dabaiInJesus/bible-model-training",
@@ -71,15 +80,6 @@
       "description": "视频跟读软件 - 支持倍速播放和AI自动提取字幕",
       "html_url": "https://github.com/dabaiInJesus/video-read-along",
       "language": "HTML",
-      "stargazers_count": 0,
-      "forks_count": 0,
-      "topics": []
-    },
-    {
-      "name": "blog",
-      "description": null,
-      "html_url": "https://github.com/dabaiInJesus/blog",
-      "language": "Vue",
       "stargazers_count": 0,
       "forks_count": 0,
       "topics": []
