@@ -1,6 +1,8 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
+import { useData } from 'vitepress'
 
+const { site } = useData()
 const data = ref(null)
 const loading = ref(true)
 const error = ref('')
@@ -10,7 +12,9 @@ const fetchRepos = async () => {
   loading.value = true
   error.value = ''
   try {
-    const res = await fetch('/repos.json')
+    const basePath = site.value.base || '/'
+    const reposPath = basePath.endsWith('/') ? basePath + 'repos.json' : basePath + '/repos.json'
+    const res = await fetch(reposPath)
     if (!res.ok) throw new Error(`获取失败 (${res.status})`)
     data.value = await res.json()
   } catch (e) {
@@ -53,7 +57,27 @@ const formatNum = (num) => {
   return num
 }
 
-onMounted(fetchRepos)
+onMounted(() => {
+  fetchRepos()
+  document.documentElement.classList.add('projects-page-wide')
+  
+  setTimeout(() => {
+    // 强制设置 VPDoc 为 95vw 并居中
+    const vpDoc = document.querySelector('.VPDoc')
+    if (vpDoc) {
+      vpDoc.style.maxWidth = '95vw'
+      vpDoc.style.width = '95vw'
+      vpDoc.style.margin = '0 auto'
+    }
+    
+    // 给 content-container 设置
+    const containers = document.querySelectorAll('.VPDoc .content-container, .VPDoc .content')
+    containers.forEach(el => {
+      el.style.maxWidth = '100%'
+      el.style.width = '100%'
+    })
+  }, 100)
+})
 </script>
 
 <template>
@@ -176,12 +200,29 @@ onMounted(fetchRepos)
   </div>
 </template>
 
+<style>
+/* 开源项目页面 - 全局样式覆盖 */
+html.projects-page-wide .VPDoc {
+  max-width: 95vw !important;
+  width: 95vw !important;
+  margin: 0 auto !important;
+}
+html.projects-page-wide .VPDoc .content-container,
+.projects-page-wide .content-container,
+.projects-page-wide.VPDoc .content-container,
+body.projects-page-wide .content-container {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+}
+</style>
+
 <style scoped>
 .projects-page {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 3rem 0;
+  width: 100% !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 3rem 1rem !important;
 }
 
 /* ─── Hero ─── */
